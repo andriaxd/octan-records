@@ -5,15 +5,15 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!toggle || !links) return;
 
     toggle.addEventListener("click", () => {
-        links.classList.toggle("open");
-        toggle.classList.toggle("open");
-        toggle.setAttribute("aria-expanded", String(links.classList.contains("open")));
+        links.classList.toggle("active");
+        toggle.classList.toggle("active");
+        toggle.setAttribute("aria-expanded", String(links.classList.contains("active")));
     });
 
     links.addEventListener("click", (e) => {
         if (e.target.tagName.toLowerCase() === "a") {
-            links.classList.remove("open");
-            toggle.classList.remove("open");
+            links.classList.remove("active");
+            toggle.classList.remove("active");
             toggle.setAttribute("aria-expanded", "false");
         }
     });
