@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Demo - Octan Records</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="js/theme-toggle.js" defer></script>
+    <script src="js/animations.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Octan Records</div>
+        <div class="header-image">
+            <img src="transparent.png" alt="Octan Records Logo">
+        </div>
+        <nav class="nav" id="site-nav">
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" type="button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#artists">Artists</a></li>
+                <li><a href="index.html#releases">Releases</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="store.html">Store</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" style="height: 50vh;">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>Submit Your Demo</h1>
+            <p>We're always looking for new talent</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="demo-guidelines">
+            <h2>Demo Guidelines</h2>
+            <div class="guidelines-grid">
+                <div class="guideline-card">
+                    <h3>🎵 What We're Looking For</h3>
+                    <ul>
+                        <li>Deep, experimental, and hypnotic sounds</li>
+                        <li>Slow-burning, atmospheric productions</li>
+                        <li>Unique sonic perspectives</li>
+                        <li>Quality over quantity</li>
+                    </ul>
+                </div>
+
+                <div class="guideline-card">
+                    <h3>📧 How to Submit</h3>
+                    <ul>
+                        <li>Send 2-3 of your best unreleased tracks</li>
+                        <li>Include SoundCloud or Bandcamp links</li>
+                        <li>Brief artist bio and social links</li>
+                        <li>Email to: <a href="mailto:octanrecords@gmail.com">octanrecords@gmail.com</a></li>
+                    </ul>
+                </div>
+
+                <div class="guideline-card">
+                    <h3>⏱️ Response Time</h3>
+                    <ul>
+                        <li>We listen to every submission</li>
+                        <li>Response within 2-4 weeks</li>
+                        <li>No response means not the right fit</li>
+                        <li>Please don't send follow-ups</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-form-container">
+            <h2>Quick Submit Form</h2>
+            <p class="form-note">Fill out the form below or email us directly at <a
+                    href="mailto:octanrecords@gmail.com">octanrecords@gmail.com</a></p>
+
+            <form class="demo-form" id="demo-form">
+                <div class="form-group">
+                    <label for="artist-name">Artist Name *</label>
+                    <input type="text" id="artist-name" name="artist-name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" name="location" placeholder="City, Country">
+                </div>
+
+                <div class="form-group">
+                    <label for="soundcloud">SoundCloud / Bandcamp Link *</label>
+                    <input type="url" id="soundcloud" name="soundcloud" placeholder="https://" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="instagram">Instagram</label>
+                    <input type="text" id="instagram" name="instagram" placeholder="@yourusername">
+                </div>
+
+                <div class="form-group">
+                    <label for="bio">Artist Bio *</label>
+                    <textarea id="bio" name="bio" rows="5" placeholder="Tell us about yourself and your music..."
+                        required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="tracks">Track Links (one per line) *</label>
+                    <textarea id="tracks" name="tracks" rows="4" placeholder="https://soundcloud.com/..."
+                        required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Additional Message</label>
+                    <textarea id="message" name="message" rows="3"
+                        placeholder="Anything else you'd like us to know..."></textarea>
+                </div>
+
+                <button type="submit" class="btn">Submit Demo</button>
+
+                <p class="form-disclaimer">
+                    Note: This form sends an email to our team. Make sure all information is correct before submitting.
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Octan Records</h3>
+                <p>Deep, Experimental, Slow Hypnotic Sounds</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><a href="mailto:octanrecords@gmail.com">octanrecords@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Octan Records. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('demo-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+
+            // Create mailto link with form data
+            const subject = encodeURIComponent(`Demo Submission: ${data['artist-name']}`);
+            const body = encodeURIComponent(`
+Artist Name: ${data['artist-name']}
+Email: ${data['email']}
+Location: ${data['location']}
+SoundCloud/Bandcamp: ${data['soundcloud']}
+Instagram: ${data['instagram']}
+
+Bio:
+${data['bio']}
+
+Track Links:
+${data['tracks']}
+
+Additional Message:
+${data['message']}
+      `);
+
+            window.location.href = `mailto:octanrecords@gmail.com?subject=${subject}&body=${body}`;
+
+            // Show confirmation
+            alert('Opening your email client... Please send the email to complete your submission!');
+        });
+    </script>
+
+    <style>
+        .demo-guidelines {
+            margin-bottom: 4rem;
+        }
+
+        .guidelines-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .guideline-card {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .guideline-card h3 {
+            margin-bottom: 1rem;
+            color: var(--accent-primary);
+        }
+
+        .guideline-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .guideline-card li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .guideline-card li::before {
+            content: '→ ';
+            color: var(--accent-primary);
+            margin-right: 0.5rem;
+        }
+
+        .demo-form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--bg-secondary);
+            padding: 3rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .demo-form-container h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .form-note {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(108, 204, 255, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .demo-form .btn {
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .form-disclaimer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 1.5rem;
+        }
+    </style>
+</body>
+
+</html>

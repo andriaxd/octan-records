@@ -1,0 +1,109 @@
+{
+    "releases": [
+        {
+            "id": "across-the-ocean",
+            "title": "Across the Ocean",
+            "artist": "Octan Records",
+            "coverImage": "Octan Cover.png",
+            "releaseDate": "2025-12-15",
+            "genre": [
+                "Deep",
+                "Experimental",
+                "Hypnotic"
+            ],
+            "mood": [
+                "Dark",
+                "Atmospheric",
+                "Slow"
+            ],
+            "description": "A deep journey through hypnotic soundscapes and experimental textures.",
+            "bandcampUrl": "https://octanrecords.bandcamp.com/album/across-the-ocean",
+            "bandcampEmbed": "https://bandcamp.com/EmbeddedPlayer/album=2894267422/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/",
+            "tracks": [
+                {
+                    "number": 1,
+                    "title": "Deep Waters",
+                    "duration": "6:42"
+                },
+                {
+                    "number": 2,
+                    "title": "Midnight Drift",
+                    "duration": "7:15"
+                },
+                {
+                    "number": 3,
+                    "title": "Ocean Floor",
+                    "duration": "8:30"
+                }
+            ],
+            "streamingLinks": {
+                "spotify": "#",
+                "appleMusic": "#",
+                "soundcloud": "#"
+            }
+        },
+        {
+            "id": "future-release-1",
+            "title": "Echoes in the Void",
+            "artist": "Iceworld",
+            "coverImage": "assets/placeholder-images/release-2.jpg",
+            "releaseDate": "2026-03-20",
+            "genre": [
+                "Ambient",
+                "Experimental"
+            ],
+            "mood": [
+                "Ethereal",
+                "Meditative"
+            ],
+            "description": "An exploration of space and silence through minimal soundscapes.",
+            "upcoming": true,
+            "tracks": [
+                {
+                    "number": 1,
+                    "title": "Void",
+                    "duration": "9:12"
+                },
+                {
+                    "number": 2,
+                    "title": "Echo Chamber",
+                    "duration": "7:45"
+                }
+            ]
+        },
+        {
+            "id": "future-release-2",
+            "title": "Neon Dreams",
+            "artist": "Sebastian Peralta",
+            "coverImage": "assets/placeholder-images/release-3.jpg",
+            "releaseDate": "2026-05-10",
+            "genre": [
+                "Deep",
+                "Hypnotic"
+            ],
+            "mood": [
+                "Dreamy",
+                "Slow"
+            ],
+            "description": "A sonic journey through neon-lit cityscapes and dreamlike states.",
+            "upcoming": true,
+            "tracks": [
+                {
+                    "number": 1,
+                    "title": "Neon Lights",
+                    "duration": "6:30"
+                },
+                {
+                    "number": 2,
+                    "title": "Dream State",
+                    "duration": "8:00"
+                },
+                {
+                    "number": 3,
+                    "title": "City Sleep",
+                    "duration": "7:20"
+                }
+            ]
+        }
+    ]
+}

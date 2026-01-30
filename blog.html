@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Octan Records</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="js/theme-toggle.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/search.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Octan Records</div>
+        <div class="header-image">
+            <img src="transparent.png" alt="Octan Records Logo">
+        </div>
+        <nav class="nav" id="site-nav">
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" type="button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#artists">Artists</a></li>
+                <li><a href="index.html#releases">Releases</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="store.html">Store</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" style="height: 50vh;">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>Blog & News</h1>
+            <p>Latest updates, interviews, and stories from Octan Records</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="blog-grid" id="blog-grid">
+            <!-- Blog posts will be loaded dynamically -->
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Octan Records</h3>
+                <p>Deep, Experimental, Slow Hypnotic Sounds</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><a href="mailto:octanrecords@gmail.com">octanrecords@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Octan Records. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        async function loadBlogPosts() {
+            try {
+                const response = await fetch('data/blog-posts.json');
+                const data = await response.json();
+                const blogGrid = document.getElementById('blog-grid');
+
+                data.posts.forEach(post => {
+                    const article = document.createElement('article');
+                    article.className = 'blog-post';
+                    article.id = post.slug;
+                    article.innerHTML = `
+            <img src="${post.image}" alt="${post.title}" onerror="this.src='Octan Cover.png'">
+            <div class="blog-post-content">
+              <span class="blog-category">${post.category}</span>
+              <h2>${post.title}</h2>
+              <div class="blog-meta">
+                <span>${post.author}</span>
+                <span>•</span>
+                <span>${new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+              </div>
+              <p class="blog-excerpt">${post.excerpt}</p>
+              <div class="blog-content">${post.content.split('\\n\\n').map(p => `<p>${p}</p>`).join('')}</div>
+            </div>
+          `;
+                    blogGrid.appendChild(article);
+                });
+            } catch (error) {
+                console.error('Error loading blog posts:', error);
+            }
+        }
+
+        loadBlogPosts();
+    </script>
+
+    <style>
+        .blog-grid {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .blog-post {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            margin-bottom: 3rem;
+            scroll-margin-top: 100px;
+        }
+
+        .blog-post img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .blog-post-content {
+            padding: 2rem;
+        }
+
+        .blog-post h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-excerpt {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .blog-content {
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</body>
+
+</html>

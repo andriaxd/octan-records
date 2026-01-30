@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Octan Records</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="js/theme-toggle.js" defer></script>
+    <script src="js/animations.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Octan Records</div>
+        <div class="header-image">
+            <img src="transparent.png" alt="Octan Records Logo">
+        </div>
+        <nav class="nav" id="site-nav">
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" type="button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#artists">Artists</a></li>
+                <li><a href="index.html#releases">Releases</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="store.html">Store</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" style="height: 50vh;">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>Gallery</h1>
+            <p>Photos and videos from events, studio sessions, and more</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="Octan Cover.png" alt="Octan Records">
+            </div>
+            <div class="gallery-item">
+                <img src="transparent.png" alt="Octan Records Logo">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/placeholder-images/iceworld.jpg" alt="Iceworld" onerror="this.src='Octan Cover.png'">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/placeholder-images/sebastian-peralta.jpg" alt="Sebastian Peralta"
+                    onerror="this.src='Octan Cover.png'">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/placeholder-images/shieeld.jpg" alt="Shieeld" onerror="this.src='Octan Cover.png'">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/placeholder-images/event-1.jpg" alt="Event" onerror="this.src='Octan Cover.png'">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/placeholder-images/event-2.jpg" alt="Event" onerror="this.src='Octan Cover.png'">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/placeholder-images/blog-1.jpg" alt="Studio" onerror="this.src='Octan Cover.png'">
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close">&times;</button>
+        <img src="" alt="" id="lightbox-img">
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev">‹</button>
+        <button class="lightbox-nav lightbox-next" id="lightbox-next">›</button>
+    </div>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Octan Records</h3>
+                <p>Deep, Experimental, Slow Hypnotic Sounds</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><a href="mailto:octanrecords@gmail.com">octanrecords@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Octan Records. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Lightbox functionality
+        const galleryItems = document.querySelectorAll('.gallery-item img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const lightboxPrev = document.getElementById('lightbox-prev');
+        const lightboxNext = document.getElementById('lightbox-next');
+        let currentIndex = 0;
+
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                currentIndex = index;
+                showLightbox();
+            });
+        });
+
+        function showLightbox() {
+            lightboxImg.src = galleryItems[currentIndex].src;
+            lightboxImg.alt = galleryItems[currentIndex].alt;
+            lightbox.classList.add('active');
+        }
+
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+            }
+        });
+
+        lightboxPrev.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+            showLightbox();
+        });
+
+        lightboxNext.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % galleryItems.length;
+            showLightbox();
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+
+            if (e.key === 'Escape') lightbox.classList.remove('active');
+            if (e.key === 'ArrowLeft') lightboxPrev.click();
+            if (e.key === 'ArrowRight') lightboxNext.click();
+        });
+    </script>
+
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: var(--card-hover-shadow);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 3rem;
+            cursor: pointer;
+            z-index: 10001;
+            transition: transform 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            transform: rotate(90deg);
+        }
+
+        #lightbox-img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            font-size: 3rem;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: var(--accent-primary);
+        }
+
+        .lightbox-prev {
+            left: 2rem;
+        }
+
+        .lightbox-next {
+            right: 2rem;
+        }
+    </style>
+</body>
+
+</html>

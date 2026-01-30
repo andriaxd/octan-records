@@ -4,20 +4,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Octan Records</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
+  <meta name="description" content="Octan Records - Deep, Experimental, Slow Hypnotic Sounds from Tbilisi, Georgia" />
+  <meta name="keywords" content="record label, electronic music, deep, experimental, hypnotic, Tbilisi, Georgia" />
+  <meta name="theme-color" content="#6cf" />
 
+  <title>Octan Records - Deep, Experimental, Hypnotic Sounds</title>
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Scripts -->
+  <script src="script.js" defer></script>
+  <script src="js/theme-toggle.js" defer></script>
+  <script src="js/particles.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/search.js" defer></script>
+  <script src="js/music-player.js" defer></script>
+  <script src="js/audio-visualizer.js" defer></script>
 </head>
 
 <body>
 
-
   <header>
     <div class="logo">Octan Records</div>
+
     <!-- Center image -->
     <div class="header-image">
-      <img src="transparent.png" alt="Header Image">
+      <img src="transparent.png" alt="Octan Records Logo">
     </div>
 
     <nav class="nav" id="site-nav">
@@ -28,55 +44,105 @@
       </button>
 
       <ul class="nav-links" id="nav-links">
-        <li><a href="#about" class="rame">About</a></li>
-        <li><a href="#artists" class="artistsUl">Artists</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#artists">Artists</a></li>
         <li><a href="#releases">Releases</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="store.html">Store</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-
-
-
   </header>
 
-
-  <section class="hero">
+  <section class="hero parallax" data-speed="0.5">
     <div class="overlay"></div>
     <div class="hero-content">
       <h1>Octan Records</h1>
-      <p></p>
-      <a href="#releases" class="btn">Explore</a>
+      <p>Deep, Experimental, Slow Hypnotic Sounds</p>
+      <a href="#releases" class="btn">Explore Releases</a>
+      <a href="submit-demo.html" class="btn btn-outline">Submit Demo</a>
     </div>
   </section>
 
   <section id="about" class="section">
     <h2>About</h2>
-    <p class="klasi">
-
-      Octan records is a record label based in Tbilisi, Georgia, Focused on delivering, Deep, Experimental, Slow
-      hypnotic sounds.
+    <p class="about-text">
+      Octan Records is a record label based in Tbilisi, Georgia, focused on delivering deep, experimental, slow
+      hypnotic sounds. We curate a unique sonic experience that transcends boundaries and explores the depths of
+      electronic music.
     </p>
 
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">3</div>
+        <div class="stat-label">Artists</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">5+</div>
+        <div class="stat-label">Releases</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">2026</div>
+        <div class="stat-label">Founded</div>
+      </div>
+    </div>
+  </section>
 
-
-
+  <section id="artists" class="section">
     <h2>Artists</h2>
-    <div class="grid">
-      <div class="card" id="saxeli1">Iceworld</div>
-      <div class="card">Sebastian Peralta</div>
-      <div class="card">Shieeld</div>
-      <img src="" alt="">
+    <div class="grid artists-grid" id="artists-grid">
+      <a href="artists/iceworld.html" class="card artist-card">
+        <div class="artist-image">
+          <img src="assets/placeholder-images/iceworld.jpg" alt="Iceworld" onerror="this.src='Octan Cover.png'">
+        </div>
+        <h3>Iceworld</h3>
+        <p class="artist-genre">Deep • Experimental • Ambient</p>
+      </a>
+
+      <a href="artists/sebastian-peralta.html" class="card artist-card">
+        <div class="artist-image">
+          <img src="assets/placeholder-images/sebastian-peralta.jpg" alt="Sebastian Peralta"
+            onerror="this.src='Octan Cover.png'">
+        </div>
+        <h3>Sebastian Peralta</h3>
+        <p class="artist-genre">Deep • Hypnotic • Techno</p>
+      </a>
+
+      <a href="artists/shieeld.html" class="card artist-card">
+        <div class="artist-image">
+          <img src="assets/placeholder-images/shieeld.jpg" alt="Shieeld" onerror="this.src='Octan Cover.png'">
+        </div>
+        <h3>Shieeld</h3>
+        <p class="artist-genre">Experimental • Dark Ambient</p>
+      </a>
+    </div>
+  </section>
+
+  <section id="releases" class="section">
+    <h2>Releases</h2>
+
+    <div class="releases-filter">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="out-now">Out Now</button>
+      <button class="filter-btn" data-filter="upcoming">Upcoming</button>
     </div>
 
-
-
-
-    <section id="releases" class="section">
-      <h2>Releases</h2>
-      <div class="release-card">
+    <div class="releases-grid" id="releases-grid">
+      <!-- Main Release -->
+      <div class="release-card" data-category="out-now">
         <img src="Octan Cover.png" alt="Across the Ocean Cover" />
-        <h3>Across the Ocean</h3>
-        <p>Out now on Bandcamp</p>
+        <div class="release-info">
+          <h3>Across the Ocean</h3>
+          <p class="release-artist">Octan Records</p>
+          <p class="release-date">December 2025</p>
+          <div class="release-tags">
+            <span class="tag">Deep</span>
+            <span class="tag">Experimental</span>
+            <span class="tag">Hypnotic</span>
+          </div>
+        </div>
         <div class="player">
           <iframe style="border: 0; width: 100%; height: 120px;"
             src="https://bandcamp.com/EmbeddedPlayer/album=2894267422/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
@@ -84,13 +150,243 @@
             <a href="https://octanrecords.bandcamp.com/album/across-the-ocean">Across the Ocean by Octan Records</a>
           </iframe>
         </div>
+        <div class="release-links">
+          <a href="https://octanrecords.bandcamp.com/album/across-the-ocean" target="_blank"
+            class="release-link">Bandcamp</a>
+          <a href="#" class="release-link">Spotify</a>
+          <a href="#" class="release-link">Apple Music</a>
+        </div>
       </div>
-    </section>
 
-    <footer id="contact">
-      <p>© 2026 Octan Records</p>
-      <p><a href="mailto:octanrecords@gmail.com">octanrecords@gmail.com</a></p>
-    </footer>
+      <!-- Upcoming Releases will be loaded dynamically -->
+    </div>
+  </section>
+
+  <section id="events" class="section">
+    <h2>Upcoming Events</h2>
+    <div class="events-preview" id="events-preview">
+      <!-- Events will be loaded dynamically -->
+    </div>
+    <div class="section-cta">
+      <a href="events.html" class="btn">View All Events</a>
+    </div>
+  </section>
+
+  <section id="blog-preview" class="section">
+    <h2>Latest News</h2>
+    <div class="blog-preview-grid" id="blog-preview">
+      <!-- Blog posts will be loaded dynamically -->
+    </div>
+    <div class="section-cta">
+      <a href="blog.html" class="btn">Read More</a>
+    </div>
+  </section>
+
+  <section id="press-kit" class="section">
+    <h2>Press Kit</h2>
+    <p>Download our press materials, logos, and artist photos.</p>
+    <a href="press-kit.html" class="btn">Download Press Kit</a>
+  </section>
+
+  <footer id="contact">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Octan Records</h3>
+        <p>Deep, Experimental, Slow Hypnotic Sounds</p>
+        <p>Tbilisi, Georgia</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#artists">Artists</a></li>
+          <li><a href="#releases">Releases</a></li>
+          <li><a href="submit-demo.html">Submit Demo</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="#" aria-label="SoundCloud">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M7 17.939h-1v-8.068c.308-.231.639-.429 1-.566v8.634zm3 0h1v-9.224c-.229.265-.443.548-.621.857l-.379-.184v8.551zm-2 0h1v-8.848c-.508-.079-.623-.05-1-.01v8.858zm-4 0h1v-7.02c-.312.458-.555.971-.692 1.535l-.308-.182v5.667zm-3-5.25c-.606.547-1 1.354-1 2.268 0 .914.394 1.721 1 2.268v-4.536zm18.879-.671c-.204-2.837-2.404-5.079-5.117-5.079-1.022 0-1.964.328-2.762.877v10.123h9.089c1.607 0 2.911-1.393 2.911-3.106 0-1.712-1.304-3.106-2.911-3.106-.384 0-.752.074-1.092.208l-.118.083zm-7.879-.493v9.534h1v-9.991c-.438-.204-.859-.379-1-.493z" />
+            </svg>
+          </a>
+          <a href="https://octanrecords.bandcamp.com" aria-label="Bandcamp" target="_blank">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M0 18.75l7.437-13.5h16.563l-7.438 13.5z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p><a href="mailto:octanrecords@gmail.com">octanrecords@gmail.com</a></p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Octan Records. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- PWA Install Prompt -->
+  <div class="install-prompt" id="install-prompt" style="display: none;">
+    <div class="install-prompt-content">
+      <p>Install Octan Records app for quick access!</p>
+      <button id="install-button" class="btn btn-small">Install</button>
+      <button id="install-dismiss" class="btn-text">Not now</button>
+    </div>
+  </div>
+
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(reg => console.log('Service Worker registered'))
+          .catch(err => console.log('Service Worker registration failed:', err));
+      });
+    }
+
+    // PWA Install Prompt
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      document.getElementById('install-prompt').style.display = 'block';
+    });
+
+    document.getElementById('install-button')?.addEventListener('click', async () => {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        deferredPrompt = null;
+        document.getElementById('install-prompt').style.display = 'none';
+      }
+    });
+
+    document.getElementById('install-dismiss')?.addEventListener('click', () => {
+      document.getElementById('install-prompt').style.display = 'none';
+    });
+
+    // Load dynamic content
+    async function loadDynamicContent() {
+      try {
+        // Load upcoming releases
+        const releasesRes = await fetch('data/releases.json');
+        const releasesData = await releasesRes.json();
+        const upcomingReleases = releasesData.releases.filter(r => r.upcoming);
+
+        const releasesGrid = document.getElementById('releases-grid');
+        upcomingReleases.forEach(release => {
+          const releaseCard = document.createElement('div');
+          releaseCard.className = 'release-card';
+          releaseCard.setAttribute('data-category', 'upcoming');
+          releaseCard.innerHTML = `
+            <div class="upcoming-badge">Coming Soon</div>
+            <img src="${release.coverImage}" alt="${release.title}" onerror="this.src='Octan Cover.png'">
+            <div class="release-info">
+              <h3>${release.title}</h3>
+              <p class="release-artist">${release.artist}</p>
+              <p class="release-date">${new Date(release.releaseDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</p>
+              <div class="release-tags">
+                ${release.genre.map(g => `<span class="tag">${g}</span>`).join('')}
+              </div>
+            </div>
+          `;
+          releasesGrid.appendChild(releaseCard);
+        });
+
+        // Load events preview
+        const eventsRes = await fetch('data/events.json');
+        const eventsData = await eventsRes.json();
+        const upcomingEvents = eventsData.events.slice(0, 3);
+
+        const eventsPreview = document.getElementById('events-preview');
+        upcomingEvents.forEach(event => {
+          const eventCard = document.createElement('div');
+          eventCard.className = 'event-card-small';
+          eventCard.innerHTML = `
+            <div class="event-date">
+              <span class="event-day">${new Date(event.date).getDate()}</span>
+              <span class="event-month">${new Date(event.date).toLocaleDateString('en-US', { month: 'short' })}</span>
+            </div>
+            <div class="event-details">
+              <h4>${event.title}</h4>
+              <p>${event.artist}</p>
+              ${event.venue ? `<p class="event-venue">${event.venue}</p>` : ''}
+            </div>
+          `;
+          eventsPreview.appendChild(eventCard);
+        });
+
+        // Load blog preview
+        const blogRes = await fetch('data/blog-posts.json');
+        const blogData = await blogRes.json();
+        const latestPosts = blogData.posts.slice(0, 3);
+
+        const blogPreview = document.getElementById('blog-preview');
+        latestPosts.forEach(post => {
+          const postCard = document.createElement('a');
+          postCard.href = `blog.html#${post.slug}`;
+          postCard.className = 'blog-card-small';
+          postCard.innerHTML = `
+            <img src="${post.image}" alt="${post.title}" onerror="this.src='Octan Cover.png'">
+            <div class="blog-card-content">
+              <span class="blog-category">${post.category}</span>
+              <h4>${post.title}</h4>
+              <p>${post.excerpt}</p>
+              <span class="blog-date">${new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+            </div>
+          `;
+          blogPreview.appendChild(postCard);
+        });
+
+        // Setup release filters
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const releaseCards = document.querySelectorAll('.release-card');
+
+        filterBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.dataset.filter;
+            releaseCards.forEach(card => {
+              if (filter === 'all' || card.dataset.category === filter) {
+                card.style.display = 'block';
+              } else {
+                card.style.display = 'none';
+              }
+            });
+          });
+        });
+
+      } catch (error) {
+        console.error('Error loading dynamic content:', error);
+      }
+    }
+
+    // Load content when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', loadDynamicContent);
+    } else {
+      loadDynamicContent();
+    }
+  </script>
+
 </body>
 
 </html>

@@ -1,0 +1,56 @@
+{
+    "events": [
+        {
+            "id": "event-1",
+            "type": "release",
+            "title": "Echoes in the Void - EP Release",
+            "artist": "Iceworld",
+            "date": "2026-03-20",
+            "time": "00:00",
+            "description": "New EP from Iceworld exploring deep ambient territories.",
+            "image": "assets/placeholder-images/release-2.jpg",
+            "links": {
+                "bandcamp": "#",
+                "spotify": "#"
+            }
+        },
+        {
+            "id": "event-2",
+            "type": "show",
+            "title": "Octan Records Showcase",
+            "artist": "Various Artists",
+            "date": "2026-04-15",
+            "time": "23:00",
+            "venue": "Bassiani, Tbilisi",
+            "description": "Label showcase featuring all Octan Records artists.",
+            "image": "assets/placeholder-images/event-1.jpg",
+            "ticketLink": "#"
+        },
+        {
+            "id": "event-3",
+            "type": "release",
+            "title": "Neon Dreams - EP Release",
+            "artist": "Sebastian Peralta",
+            "date": "2026-05-10",
+            "time": "00:00",
+            "description": "Sebastian Peralta returns with his most hypnotic work yet.",
+            "image": "assets/placeholder-images/release-3.jpg",
+            "links": {
+                "bandcamp": "#",
+                "spotify": "#"
+            }
+        },
+        {
+            "id": "event-4",
+            "type": "show",
+            "title": "Deep Sessions w/ Shieeld",
+            "artist": "Shieeld",
+            "date": "2026-06-01",
+            "time": "22:00",
+            "venue": "Khidi, Tbilisi",
+            "description": "An evening of experimental soundscapes and deep techno.",
+            "image": "assets/placeholder-images/event-2.jpg",
+            "ticketLink": "#"
+        }
+    ]
+}

@@ -1,0 +1,48 @@
+{
+    "posts": [
+        {
+            "id": "post-1",
+            "title": "Welcome to Octan Records",
+            "slug": "welcome-to-octan-records",
+            "date": "2026-01-15",
+            "author": "Octan Records",
+            "category": "News",
+            "excerpt": "Introducing our new record label focused on deep, experimental, and hypnotic sounds from Tbilisi and beyond.",
+            "image": "assets/placeholder-images/blog-1.jpg",
+            "content": "We're excited to announce the launch of Octan Records, a new label dedicated to pushing the boundaries of electronic music. Based in Tbilisi, Georgia, we focus on deep, experimental, and slow hypnotic sounds that transport listeners to new dimensions.\n\nOur roster includes talented artists like Iceworld, Sebastian Peralta, and Shieeld, each bringing their unique vision to the label. Stay tuned for upcoming releases and events."
+        },
+        {
+            "id": "post-2",
+            "title": "Interview: Iceworld on 'Echoes in the Void'",
+            "slug": "interview-iceworld-echoes-in-the-void",
+            "date": "2026-02-10",
+            "author": "Octan Records",
+            "category": "Interview",
+            "excerpt": "We sit down with Iceworld to discuss his upcoming EP and creative process.",
+            "image": "assets/placeholder-images/blog-2.jpg",
+            "content": "Ahead of his upcoming EP 'Echoes in the Void', we caught up with Iceworld to talk about his inspiration, production techniques, and what's next.\n\nQ: Tell us about the concept behind 'Echoes in the Void'.\nA: I wanted to explore the space between sound and silence, creating an atmosphere that feels both vast and intimate.\n\nQ: What's your production setup like?\nA: I work mostly in the box, but I love incorporating field recordings and found sounds to add texture and depth."
+        },
+        {
+            "id": "post-3",
+            "title": "Behind the Scenes: Across the Ocean",
+            "slug": "behind-the-scenes-across-the-ocean",
+            "date": "2026-01-20",
+            "author": "Octan Records",
+            "category": "Behind the Scenes",
+            "excerpt": "A look at the making of our debut compilation 'Across the Ocean'.",
+            "image": "Octan Cover.png",
+            "content": "Our debut release 'Across the Ocean' represents the sound and vision of Octan Records. This compilation brings together tracks that embody our aesthetic: deep, hypnotic, and experimental.\n\nThe artwork was created in collaboration with local visual artists, capturing the essence of the music through abstract imagery. Each track was carefully selected to create a cohesive journey from start to finish."
+        },
+        {
+            "id": "post-4",
+            "title": "The Tbilisi Electronic Music Scene",
+            "slug": "tbilisi-electronic-music-scene",
+            "date": "2026-02-25",
+            "author": "Octan Records",
+            "category": "Feature",
+            "excerpt": "Exploring the vibrant and diverse electronic music community in Tbilisi, Georgia.",
+            "image": "assets/placeholder-images/blog-4.jpg",
+            "content": "Tbilisi has emerged as one of the most exciting cities for electronic music in recent years. With legendary clubs like Bassiani and Khidi, and a thriving community of artists and promoters, the city has become a destination for music lovers worldwide.\n\nOctan Records is proud to be part of this community, contributing to the rich tapestry of sounds coming from Georgia."
+        }
+    ]
+}
