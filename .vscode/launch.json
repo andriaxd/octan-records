@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Edge (VS Code)",
+      "type": "msedge",
+      "request": "launch",
+      "runtimeExecutable": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}",
+      "runtimeArgs": [
+        "--new-window",
+        "--user-data-dir=${workspaceFolder}\\.vscode\\edge-profile"
+      ]
+    }
+  ]
+}
