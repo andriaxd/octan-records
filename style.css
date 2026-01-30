@@ -257,6 +257,21 @@ footer {
 
 /* Mobile */
 @media (max-width: 768px) {
+  .logo {
+    display: none;
+  }
+
+  .header-image {
+    position: static;
+    transform: none;
+    height: 40px;
+  }
+
+  header {
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
   .nav-toggle {
     display: flex;
   }
