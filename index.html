@@ -7,6 +7,8 @@
   <meta name="description" content="Octan Records - Deep, Experimental, Slow Hypnotic Sounds from Tbilisi, Georgia" />
   <title>Octan Records</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="artist.css" />
+  <link rel="stylesheet" href="release.css" />
   <script src="script.js" defer></script>
   <link rel="icon" href="transparent.png" type="image/png">
 </head>
@@ -14,9 +16,11 @@
 <body>
 
   <header>
-    <div class="logo">Octan Records</div>
+    <a href="index.html" class="logo-link">
+      <div class="logo">Octan Records</div>
+    </a>
     <div class="header-image">
-      <img src="transparent.png" alt="Octan Records Logo">
+      <a href="index.html"><img src="transparent.png" alt="Octan Records Logo"></a>
     </div>
     <nav class="nav" id="site-nav">
       <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" type="button">
@@ -51,39 +55,76 @@
   <section class="section" id="artists">
     <h2>Artists</h2>
     <div class="artist-grid">
-      <div class="artist-card">
-        <img src="transparent.png" alt="Iceworld" onerror="this.src='Octan Cover.png'">
-        <h3>Iceworld</h3>
-        <p>Deep • Experimental • Ambient</p>
-      </div>
-      <div class="artist-card">
-        <img src="transparent.png" alt="Sebastian Peralta" onerror="this.src='Octan Cover.png'">
-        <h3>Sebastian Peralta</h3>
-        <p>Deep • Hypnotic • Techno</p>
-      </div>
-      <div class="artist-card">
-        <img src="transparent.png" alt="Shieeld" onerror="this.src='Octan Cover.png'">
-        <h3>Shieeld</h3>
-        <p>Experimental • Dark Ambient</p>
-      </div>
+      <a href="artist-iceworld.html" class="artist-card-link">
+        <div class="artist-card">
+          <img src="transparent.png" alt="Iceworld" onerror="this.src='Octan Cover.png'">
+          <h3>Iceworld</h3>
+          <p>Deep • Experimental • Ambient</p>
+        </div>
+      </a>
+      <a href="artist-sebastian-peralta.html" class="artist-card-link">
+        <div class="artist-card">
+          <img src="transparent.png" alt="Sebastian Peralta" onerror="this.src='Octan Cover.png'">
+          <h3>Sebastian Peralta</h3>
+          <p>Deep • Hypnotic • Techno</p>
+        </div>
+      </a>
+      <a href="artist-shieeld.html" class="artist-card-link">
+        <div class="artist-card">
+          <img src="transparent.png" alt="Shieeld" onerror="this.src='Octan Cover.png'">
+          <h3>Shieeld</h3>
+          <p>Experimental • Dark Ambient</p>
+        </div>
+      </a>
     </div>
   </section>
 
   <section class="section" id="releases">
     <h2>Releases</h2>
     <div class="release-grid">
-      <div class="release-card">
-        <img src="Octan Cover.png" alt="Across the Ocean">
-        <h3>Across the Ocean</h3>
-        <p>Octan Records</p>
-        <div class="player">
-          <iframe style="border: 0; width: 100%; height: 120px;"
-            src="https://bandcamp.com/EmbeddedPlayer/album=2894267422/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
-            seamless>
-            <a href="https://octanrecords.bandcamp.com/album/across-the-ocean">Across the Ocean by Iceworld, Peralta</a>
-          </iframe>
+
+      <a href="release-across-the-ocean.html" class="release-card-link">
+        <div class="release-card">
+          <img src="oct001.jpg" alt="Across the Ocean">
+          <h3>Across the Ocean</h3>
+          <p class="release-credit">Iceworld &amp; Sebastian Peralta</p>
+          <ol class="release-tracklist-mini">
+            <li><span>01</span> Imaginary Audience</li>
+            <li><span>02</span> Dissonant Cadence</li>
+            <li><span>03</span> Brief Moment</li>
+            <li><span>04</span> Solenoid</li>
+            <li><span>05</span> Domains</li>
+            <li><span>06</span> Sacred Caves</li>
+          </ol>
         </div>
-      </div>
+      </a>
+
+      <a href="release-oct002va.html" class="release-card-link">
+        <div class="release-card">
+          <img src="oct002.png" alt="OCT002VA">
+          <h3>OCT002VA</h3>
+          <p class="release-label">Octan Records</p>
+          <ul class="release-artists">
+            <li>Miguel Passion</li>
+            <li>Shieeld</li>
+            <li>Sebastian Peralta</li>
+            <li>Iceworld</li>
+            <li>Aureal</li>
+            <li>Local Analyst</li>
+            <li>Hohe</li>
+          </ul>
+          <ol class="release-tracklist-mini">
+            <li><span>01</span> Distant Figures</li>
+            <li><span>02</span> Intetsang</li>
+            <li><span>03</span> Past Tense</li>
+            <li><span>04</span> Iridescent</li>
+            <li><span>05</span> Everything</li>
+            <li><span>06</span> Aether</li>
+            <li><span>07</span> Normalize Damage</li>
+          </ol>
+        </div>
+      </a>
+
     </div>
   </section>
 
@@ -100,6 +141,7 @@
     </div>
     <div class="footer-bottom">
       <p>© 2026 Octan Records. All rights reserved.</p>
+      <p class="footer-credit">Made with <span>♥</span> by Iceworld</p>
     </div>
   </footer>
 

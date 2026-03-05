@@ -1,0 +1,272 @@
+/* =============================================
+   Release Page Styles
+   ============================================= */
+
+.release-main {
+    background: #0d0d0d;
+    min-height: 80vh;
+    padding: 7rem 2rem 6rem;
+}
+
+.release-page-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 5rem;
+    align-items: flex-start;
+}
+
+/* LEFT COLUMN */
+.release-cover-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.release-cover-wrapper {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(108, 204, 255, 0.2);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(108, 204, 255, 0.06);
+    background: #1a1a1a;
+    aspect-ratio: 1 / 1;
+}
+
+.release-cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.release-player-wrap {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(108, 204, 255, 0.15);
+}
+
+.release-player-wrap iframe {
+    display: block;
+    border-radius: 0;
+}
+
+/* Artists card (OCT002VA page) */
+.release-artists-card {
+    background: #1a1a1a;
+    border: 1px solid rgba(108, 204, 255, 0.15);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.release-artists-card-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #6cf;
+    margin-bottom: 1rem;
+}
+
+.release-artists-card-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.release-artists-card-list li {
+    color: #ccc;
+    font-size: 0.95rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.release-artists-card-list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* RIGHT COLUMN */
+.release-info-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding-top: 0.5rem;
+}
+
+.release-meta-block {
+    border-bottom: 1px solid rgba(108, 204, 255, 0.12);
+    padding-bottom: 2rem;
+}
+
+.release-cat {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #6cf;
+    margin-bottom: 0.6rem;
+}
+
+.release-title {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    color: #f0f0f0;
+    margin-bottom: 0.5rem;
+}
+
+.release-artists-line {
+    font-size: 1.1rem;
+    color: #6cf;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+}
+
+.release-label-tag {
+    font-size: 0.82rem;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.release-desc-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.release-desc-block p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #999;
+    text-align: left;
+    margin: 0;
+    max-width: none;
+}
+
+/* Tracklist */
+.tracklist-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tracklist-heading {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #6cf;
+    font-weight: 500;
+}
+
+.tracklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.tracklist li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    transition: background 0.2s;
+    border-radius: 6px;
+    padding-left: 0.5rem;
+}
+
+.tracklist li:hover {
+    background: rgba(108, 204, 255, 0.04);
+}
+
+.tracklist li:last-child {
+    border-bottom: none;
+}
+
+.track-num {
+    font-size: 0.75rem;
+    color: #444;
+    font-weight: 600;
+    letter-spacing: 1px;
+    min-width: 24px;
+}
+
+.track-name {
+    flex: 1;
+    color: #ddd;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.track-artist {
+    color: #6cf;
+    font-size: 0.82rem;
+    font-weight: 400;
+    min-width: 130px;
+}
+
+.track-time {
+    color: #555;
+    font-size: 0.82rem;
+    font-family: monospace;
+    letter-spacing: 0.5px;
+}
+
+/* Make release cards on index.html clickable */
+.release-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.release-card-link .release-card {
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.release-card-link:hover .release-card {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(108, 204, 255, 0.15);
+}
+
+/* =============================================
+   Responsive
+   ============================================= */
+
+@media (max-width: 960px) {
+    .release-page-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .release-cover-col {
+        max-width: 350px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .release-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .release-main {
+        padding: 5rem 1rem 4rem;
+    }
+
+    .release-title {
+        font-size: 1.8rem;
+    }
+
+    .track-artist {
+        display: none;
+    }
+}
