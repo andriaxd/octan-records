@@ -195,6 +195,7 @@ header {
   display: flex;
   flex-direction: column;
   height: 100%;
+  text-align: left;
 }
 
 .release-card img {
@@ -248,6 +249,7 @@ header {
   color: #6cf !important;
   font-size: 0.9rem;
   font-weight: 500;
+  text-align: left;
 }
 
 .logo-link {
