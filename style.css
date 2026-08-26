@@ -186,6 +186,10 @@ header {
   margin-top: 2rem;
 }
 
+.flatness-card {
+  grid-column: 2;
+}
+
 .release-card {
   background: #1a1a1a;
   border-radius: 12px;
@@ -221,6 +225,12 @@ header {
   width: 100%;
   margin-left: 0;
   margin-right: 0;
+}
+
+@media (max-width: 960px) {
+  .flatness-card {
+    grid-column: auto;
+  }
 }
 
 .release-tracklist-mini {
