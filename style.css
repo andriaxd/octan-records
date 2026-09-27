@@ -86,7 +86,8 @@ header {
 /* Hero */
 .hero {
   position: relative;
-  height: 100vh;
+  min-height: 680px;
+  height: 94vh;
   background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
   display: flex;
   align-items: center;
@@ -97,38 +98,93 @@ header {
 .overlay {
   position: absolute;
   inset: 0;
-  background: url('Octan Cover.png') center/cover no-repeat;
-  opacity: 0.15;
+  background: linear-gradient(90deg, rgba(7, 10, 13, 0.88), rgba(7, 10, 13, 0.35)), url('Octan Cover.png') center/cover no-repeat;
+  opacity: 0.8;
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
+  width: min(100% - 3rem, 1050px);
+  padding: 6rem 0 3rem;
+}
+
+.section-eyebrow {
+  color: #6cf;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  line-height: 1.5;
+  text-transform: uppercase;
 }
 
 .hero h1 {
-  font-size: 4rem;
+  font-size: clamp(3.25rem, 8vw, 6.5rem);
   font-weight: 700;
-  margin-bottom: 1rem;
-  letter-spacing: 3px;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.025em;
+  line-height: 1.02;
 }
 
 .hero p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #aaa;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 2rem;
+}
+
+.button {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid rgba(108, 204, 255, 0.55);
+  border-radius: 4px;
+  color: #eaf8ff;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-secondary {
+  background: rgba(8, 13, 17, 0.35);
+}
+
+.button-secondary:hover {
+  background: rgba(108, 204, 255, 0.12);
 }
 
 /* Sections */
 .section {
-  padding: 5rem 2rem;
+  padding: 6rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
+.section-eyebrow {
+  margin-bottom: 0.6rem;
   text-align: center;
+}
+
+.section h2 {
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  margin-bottom: 2.25rem;
+  text-align: center;
+  letter-spacing: 0.01em;
 }
 
 .section p {
@@ -137,6 +193,85 @@ header {
   font-size: 1.1rem;
   max-width: 800px;
   margin: 0 auto;
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: stretch;
+  gap: 3rem;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.about-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.section .about-copy p {
+  max-width: none;
+  margin: 0;
+  text-align: left;
+  line-height: 1.9;
+}
+
+.about-note {
+  padding: 1.75rem;
+  border: 1px solid rgba(108, 204, 255, 0.2);
+  border-radius: 10px;
+  background: linear-gradient(145deg, rgba(108, 204, 255, 0.08), rgba(26, 26, 26, 0.78));
+}
+
+.section .about-note .about-note-label {
+  margin: 0 0 0.6rem;
+  color: #6cf;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.section .about-note > p:not(.about-note-label) {
+  margin: 0;
+  color: #d0d7da;
+  font-size: 1rem;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.about-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.about-facts div {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-facts strong {
+  color: #f2f7f9;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.about-facts span {
+  color: #8e9ba1;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+}
+
+.section p.section-intro {
+  margin: -1.4rem auto 2rem;
+  font-size: 0.98rem;
 }
 
 /* Artist Grid */
@@ -148,11 +283,12 @@ header {
 }
 
 .artist-card {
-  background: #1a1a1a;
-  border-radius: 12px;
+  background: transparent;
+  border-radius: 0;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
-  border: 1px solid rgba(108, 204, 255, 0.2);
+  border: 0;
+  border-top: 1px solid #303030;
 }
 
 .artist-card:hover {
@@ -161,14 +297,17 @@ header {
 }
 
 .artist-card img {
+  display: block;
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
+  filter: saturate(0.75);
 }
 
 .artist-card h3 {
-  padding: 1.5rem 1.5rem 0.5rem;
-  font-size: 1.3rem;
+  padding: 1.1rem 0;
+  font-size: 1.15rem;
+  font-weight: 500;
 }
 
 .artist-card p {
@@ -176,6 +315,11 @@ header {
   color: #6cf;
   font-size: 0.9rem;
   text-align: left;
+  transition: color 0.2s ease;
+}
+
+.artist-card-link:hover .artist-card p {
+  color: #bdeaff;
 }
 
 /* Release Grid */
@@ -417,12 +561,18 @@ footer {
     font-size: 2.5rem;
   }
 
-  .hero p {
-    font-size: 1.2rem;
+  .hero {
+    min-height: 620px;
+    height: 88vh;
   }
 
   .section {
     padding: 3rem 1rem;
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
   }
 
   .section h2 {
